@@ -7,12 +7,12 @@ namespace FindMaximumUsingGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Find Maximum Number Using Generics Program ");
-            Console.WriteLine("1.Compare three integer numbers \n2.Compare three float numbers \n3.Compare three string values \n4.Compare three values using Generic Method \n5.Compare three values using Generic Class \n6.Compare more than three values");
+            Console.WriteLine("1.Compare three integer numbers \n2.Compare three float numbers \n3.Compare three string values \n4.Compare three values using Generic Method \n5.Compare three values using Generic Class \n6.Compare more than three values \n7.print method");
             Console.WriteLine("Please choose the option to execute : ");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
-            while (option < 1 || option > 7)
+            while (option < 1 || option > 8)
             {
                 option = Convert.ToInt32(Console.ReadLine());
             }
@@ -53,6 +53,24 @@ namespace FindMaximumUsingGenerics
                     int[] array1 = { 10, 20, 30, 40, 50 };
                     ExtendFindMethod<int> obj = new ExtendFindMethod<int>(array1);
                     Console.WriteLine("Maximum value amongst the provided numbers is : {0}", obj.MaxValue(array1));
+                    // obj.printMax();
+                    break;
+                case 7:
+                    //Test case for int
+                    int[] intarray = { 10, 20, 30, 40, 50 };
+                    PrintMethod<int> intobj = new PrintMethod<int>(intarray);
+                    intobj.printMax();
+                    //Test case for Float
+                    float[] floatarray = { 10.3f, 20.3f, 30.2f, 40.7f, 50.8f };
+                    PrintMethod<float> floatobj = new PrintMethod<float>(floatarray);
+                    floatobj.printMax();
+                    //Test case for String
+                    string[] stringArray = { "Apple", "Peach", "Banana" };
+                    PrintMethod<string> stringobj = new PrintMethod<string>(stringArray);
+                    stringobj.printMax();
+                    break;
+                default:
+                    Console.WriteLine("Invalid option, please choose again.");
                     break;
             }
         }
