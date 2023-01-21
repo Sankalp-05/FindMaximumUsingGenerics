@@ -7,7 +7,7 @@ namespace FindMaximumUsingGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Find Maximum Number Using Generics Program ");
-            Console.WriteLine("1.Compare three integer numbers \n2.Compare three float numbers \n3.Compare three string values \n4.Compare three values using Generic Method");
+            Console.WriteLine("1.Compare three integer numbers \n2.Compare three float numbers \n3.Compare three string values \n4.Compare three values using Generic Method \n5.Compare three values using Generic Class \n6.Compare more than three values");
             Console.WriteLine("Please choose the option to execute : ");
 
             int option = Convert.ToInt32(Console.ReadLine());
@@ -42,6 +42,17 @@ namespace FindMaximumUsingGenerics
                     Console.WriteLine(RefectorMethod.MaximumValue(65, 20, 10));
                     Console.WriteLine(RefectorMethod.MaximumValue(10.2f, 20.5f, 20.5f));
                     Console.WriteLine(RefectorMethod.MaximumValue("90", "7", "3"));
+                    break;
+                case 5:
+                    Console.WriteLine("Executing three test cases for Finding Maximum Value using Generic Class");
+                    Console.WriteLine(RefactorClass<int>.MaximumValue(30, 65, 20));
+                    Console.WriteLine(RefactorClass<float>.MaximumValue(10.2f, 20.5f, 20.5f));
+                    Console.WriteLine(RefactorClass<string>.MaximumValue("1", "89", "3"));
+                    break;
+                case 6:
+                    int[] array1 = { 10, 20, 30, 40, 50 };
+                    ExtendFindMethod<int> obj = new ExtendFindMethod<int>(array1);
+                    Console.WriteLine("Maximum value amongst the provided numbers is : {0}", obj.MaxValue(array1));
                     break;
             }
         }
